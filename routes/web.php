@@ -19,3 +19,4 @@ use App\Http\Controllers\OrderController;
 // });
 
 Route::resource('/', OrderController::class);
+// Route::resource('/test', [OrderController::class, "index"]);

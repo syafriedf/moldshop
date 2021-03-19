@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Moldshop Order Management</title>
 
     <!-- Icons font CSS-->
     <link href="{{asset('order')}}/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -27,13 +27,16 @@
 </head>
 
 <body>
+
     <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+    <a href="#" data-toggle="modal" data-target="#editmodal" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+             <i class="fas fa-plus fa-sm text-white-50"></i> Cek Data Anda</a>
         <div class="wrapper wrapper--w680">
             <h1 style="color:white; font-size:60px;"><b><center>Moldshop Order</b></center></h1><br>
 
             @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
+            <div style="  background: #dff0d8;padding:20px">
+                <p style="color:#3c763d"><b>{{ $message }}</b> Order anda segera di proses</p>
             </div>
             @endif
 
@@ -47,7 +50,7 @@
                     @csrf
                         <div class="input-group">
                         <label><b>DATE IN</b></label>
-                            <input required="required" class="input--style-1" type="text" placeholder=<?php echo $time3->format("d-m-Y"); ?> value="<?php echo $time3->format("d-m-Y"); ?>" name="date_in" disabled>
+                            <input required="required" class="input--style-1" type="text" placeholder=<?php echo $time3->format("Y-m-d"); ?> value="<?php echo $time3->format("Y-m-d"); ?>" name="date_in">
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
@@ -72,7 +75,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                 <label><b>TO</b></label>
-                            <input required="required" class="input--style-1" type="text" placeholder="MS" value="MS" name="to_dep" disabled>
+                            <input required="required" class="input--style-1" type="text" placeholder="MS" value="MS" name="to_dep">
                                 </div>
                             </div>
                         </div>

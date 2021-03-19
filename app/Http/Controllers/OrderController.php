@@ -10,8 +10,16 @@ class OrderController extends Controller
     public function index()
     {
         // $orders = Order::all();
-        return view('test');
+        return view('order');
     }
+
+    // public function index()
+    // {
+    //     $orders = Order::first()->paginate(5);
+ 
+    //     return view('test',compact('orders'))
+    //         ->with('i', (request()->input('page', 1) - 1) * 5);
+    // }
 
 
     public function create()
